@@ -1,7 +1,7 @@
-# PEVŠ FI Thesis LaTeX Template
+# PEVŠ FI Bc. Thesis LaTeX Template
 [![CC0](https://img.shields.io/badge/License-CC0-lightgrey.svg)](http://creativecommons.org/publicdomain/zero/1.0/)
 
-Unofficial LaTeX template for bachelor/master thesis at [Pan-European University](https://www.paneurouni.com), Faculty of Informatics based on the [**2024 template**(paneurouni.com)](https://www.paneurouni.com/wp-content/uploads/2017/03/fi_dp_vzor_2024.docx). Work in progress...
+Official LaTeX template for bachelor thesis at [Pan-European University](https://www.paneurouni.com), Faculty of Informatics
 
 ## Features
 
@@ -23,21 +23,14 @@ Unofficial LaTeX template for bachelor/master thesis at [Pan-European University
 There are three ways to get started:
 
 1. **Use as Template** (Recommended)
-   - Visit the [GitHub repository](https://github.com/TheMidnightRambler/pevs-fi-thesis-latex)
+   - Visit the [GitHub repository](https://github.com/PEVS-FI/bc-thesis-template)
    - Click the green "Use this template" button in the top right
    - Select "Create a new repository"
    - Follow the prompts to create your own repository
 
-2. **Clone Repository**
-   ```bash
-   git clone https://github.com/TheMidnightRambler/pevs-fi-thesis-latex.git
-   cd pevs-fi-thesis-latex
-   ```
-
-3. **Download ZIP**
-   - Visit the [GitHub repository](https://github.com/TheMidnightRambler/pevs-fi-thesis-latex)
-   - Click the "Code" dropdown button 
-   - Select "Download ZIP"
+3. **Download Release**
+   - Visit the [GitHub repository](https://github.com/PEVS-FI/bc-thesis-template)
+   - Download latest release
    - Extract the downloaded file to your preferred location
 
 ### Customizing Content
