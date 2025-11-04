@@ -23,13 +23,13 @@ Official LaTeX template for bachelor/master thesis at [Pan-European University](
 There are three ways to get started:
 
 1. **Use as Template** (Recommended)
-   - Visit the [GitHub repository](https://github.com/PEVS-FI/bc-thesis-template)
+   - Visit the [GitHub repository](https://github.com/PEVS-FI/thesis-template)
    - Click the green "Use this template" button in the top right
    - Select "Create a new repository"
    - Follow the prompts to create your own repository
 
 3. **Download Release**
-   - Visit the [GitHub repository](https://github.com/PEVS-FI/bc-thesis-template)
+   - Visit the [GitHub repository](https://github.com/PEVS-FI/thesis-template)
    - Download latest release
    - Extract the downloaded file to your preferred location
 
