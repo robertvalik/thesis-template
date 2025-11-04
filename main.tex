@@ -23,9 +23,26 @@
 \usepackage{listings}% Code blocks with syntax highlighting:
 %\usepackage{hyperref} % PDF hyperlinks
 
+% ‼️‼️‼️‼️ Choose thesis type ‼️‼️‼️‼️
+% Uncomment only one of the following lines:
+%\def\isBachelorThesis{1} % Bachelor thesis
+\def\isMasterThesis{1} % Master thesis
+
 % Thesis metadata
+% Bachelor thesis info
+\ifdefined\isBachelorThesis
 \title{Názov bakalárskej práce}
 \author{Janko Mrkvička}
+\def\thesisHeader{Bakalárska práca} 
+\fi
+
+% Master thesis info 
+\ifdefined\isMasterThesis
+\title{Názov diplomovej práce}
+\author{Bc. Janko Mrkvička}
+\def\thesisHeader{Diplomová práca}
+\fi
+
 \def\uid{FI-123456-12345} % Replace with your own student ID
 \def\supervisor{doc. RNDr. Severín Hrot, PhD.}
 \def\consultant{Mgr. Ignác Novák} % Optional, remove in titlepage-alt

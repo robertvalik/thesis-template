@@ -1,7 +1,7 @@
-# PEVŠ FI Bc. Thesis LaTeX Template
+# PEVŠ FI Thesis LaTeX Template
 [![CC0](https://img.shields.io/badge/License-CC0-lightgrey.svg)](http://creativecommons.org/publicdomain/zero/1.0/)
 
-Official LaTeX template for bachelor thesis at [Pan-European University](https://www.paneurouni.com), Faculty of Informatics
+Official LaTeX template for bachelor/master thesis at [Pan-European University](https://www.paneurouni.com), Faculty of Informatics
 
 ## Features
 
@@ -36,7 +36,7 @@ There are three ways to get started:
 ### Customizing Content
 After obtaining the template:
 
-- Edit `main.tex` and fill out the metadata section
+- Edit `main.tex` and fill out the metadata section, be carefull to choose type based on your studies bachelor/master
 - Replace `essentials/assignment.pdf` with your own assignment
 - Edit `essentials/abstract.tex` with your abstract
 - Edit `essentials/acknowledgment.tex` and `essentials/declaration.tex` if necessary
