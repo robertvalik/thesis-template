@@ -16,11 +16,13 @@
     
     \noindent
     \begin{tabular}{@{}ll@{}}
-        Študijný program: & \program \\[1.3em]
-        Študijný odbor: & \fieldofstudy \\[1.3em]
-        Školiace pracovisko: & \department \\[1.3em]
-        Školiteľ: & \supervisor \\
-        % Konzultant: & \consultant \\ % Optional
+        \lnprogram: & \program \\[1.3em]
+        \lnfieldofstudy: & \fieldofstudy \\[1.3em]
+        \lndepartment: & \department \\[1.3em]
+        \lnsupervisor: & \supervisor \\
+        \ifdefined\consultant
+        \\[-0.2em]\lnconsultant: & \consultant \\
+        \fi
     \end{tabular}
     
     \vspace{10em} 
