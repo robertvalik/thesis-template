@@ -129,10 +129,10 @@
 \pagestyle{fancy}
 \fancyhead{}
 \fancyfoot{}
-\fancyfoot[R]{\thepage} % restore numbering
+\fancyfoot[R]{\thepage\hspace{0.4cm}} % restore numbering + ugly fix for geometry change
 
 % Increase the right margin - as seen in the doc template
-\newgeometry{left=3.5cm, top=2.5cm, right=2cm, bottom=3.85cm} % TODO: fix margin of the page numbering
+\newgeometry{left=3.5cm, top=2.5cm, right=2cm, bottom=3.85cm} 
 
 \listoffigures
 \pagebreak
