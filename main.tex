@@ -4,7 +4,7 @@
 \usepackage{setspace}
 \usepackage{pdfpages}
 \usepackage{newtxtext} % Times New Roman
-\usepackage[a4paper, left=3.5cm, top=2.5cm, right=1.5cm, bottom=3.85cm]{geometry} % Margins
+\usepackage[a4paper, left=3.5cm, top=2.5cm, right=1.5cm, bottom=3.85cm, includefoot]{geometry} % Margins
 \usepackage{graphicx}
 \usepackage[table]{xcolor}
 \usepackage{tocbibind}
@@ -63,7 +63,7 @@
 \pagestyle{fancy}
 \fancyhead{}
 \fancyfoot{}
-\fancyfoot[R]{\thepage}
+\fancyfoot{} % no nombering in the front matter
 \renewcommand{\headrulewidth}{0pt}%
 
 % Loading Acronyms
@@ -124,6 +124,12 @@
 % Print Table of Contents, List of Figures
 \tableofcontents
 \pagebreak
+
+% set style
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyfoot[R]{\thepage} % restore numbering
 
 \newgeometry{left=3.5cm, top=2.5cm, right=2cm, bottom=3.85cm}
 
