@@ -63,7 +63,7 @@
 \pagestyle{fancy}
 \fancyhead{}
 \fancyfoot{}
-\fancyfoot{} % no nombering in the front matter
+\fancyfoot{} % no numbering in the front matter
 \renewcommand{\headrulewidth}{0pt}%
 
 % Loading Acronyms
@@ -112,6 +112,10 @@
 % Essentials
 \include{essentials/titlepage}
 \include{essentials/titlepage-alt}
+
+% Even the title pages should be accounted for - as seen in the doc template (Contents is on p.8).
+\setcounter{page}{3}
+
 %
 % Replace file with your own:
 \includepdf{essentials/assignment.pdf}
@@ -146,7 +150,9 @@
 
 %%%%%%% DOCUMENT BODY %%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{\lnintro}
+\section*{\lnintro} % Introduction is unnumbered! For numbered chapters see examples.tex
+\addcontentsline{toc}{section}{\lnintro}
+
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu lacus leo. Nulla egestas purus non dignissim tincidunt. In sit amet tellus bibendum, lobortis magna ut, sodales mi. Etiam vel eros efficitur purus ultrices vulputate et quis justo. Nunc ultrices tellus a dui mattis, eget laoreet arcu tempor. Donec vestibulum, magna ac fringilla lacinia, libero risus fringilla arcu, nec consectetur nibh justo vel sem. Quisque gravida sit amet elit ut aliquam...\par
 \vspace{1em}
 \noindent
@@ -161,7 +167,8 @@ V tretej kapitole sme sa zaoberali popisom implementácie systému...
 % Examples:
 \include{examples/examples} 
 
-\section{\lnconclusion}
+\section*{\lnconclusion} % Conclusion is unnumbered!
+\addcontentsline{toc}{section}{\lnconclusion}
 Nezabudnite na Záver a zhodnotenie.\\  
 Cieľ bakalárskej práce bol splnený.
 
