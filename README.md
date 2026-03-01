@@ -36,12 +36,12 @@ There are three ways to get started:
 ### Customizing Content
 After obtaining the template:
 
-- Edit `main.tex` and fill out the metadata section, be carefull to choose type based on your studies bachelor/master
+- Edit `metadata.tex` and fill out the metadata section, be carefull to choose type based on your studies bachelor/master
 - Replace `essentials/assignment.pdf` with your own assignment
 - Edit `essentials/abstract.tex` with your abstract
 - Edit `essentials/acknowledgment.tex` and `essentials/declaration.tex` if necessary
 
-> **Note**: Remove *Consultant* row from the table in `titlepage-alt.tex` if not needed.
+> **Note**: Remove *Consultant* row from the `metadata.tex` if not needed.
 
 
 ### VS Code Setup
@@ -97,6 +97,10 @@ pdflatex main
 │   └── assignment.pdf     # Assignment
 ├── examples/              
 │   └── examples.tex       # Example usage demonstrations
+├── lang/              
+│   ├── english.tex        # English language mutation
+│   └── slovak.tex         # Slovak language mutation
+├── metadata.tex           # Metadata of the thesis
 ├── main.tex               # Main document
 └── README.md              # This file
 ```

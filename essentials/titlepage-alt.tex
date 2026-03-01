@@ -1,12 +1,12 @@
 \makeatletter
 \begin{titlepage}
     \begin{center}
-        \MakeUppercase{\textbf{\university}}\\
+        \MakeUppercase{\textbf{\university}}\\[0.1em]
         \MakeUppercase{\textbf{\faculty}}
     
     \vspace*{\fill}
     
-        \textbf{\large \@title\\}
+        \MakeUppercase{\textbf{\large \@title\\}}
         \vspace{1em}
         \thesisHeader\\
         \vspace{1em}
@@ -16,16 +16,19 @@
     
     \noindent
     \begin{tabular}{@{}ll@{}}
-        Študijný program: & \program \\[1.3em]
-        Študijný odbor: & \fieldofstudy \\[1.3em]
-        Školiace pracovisko: & \department \\[1.3em]
-        Školiteľ: & \supervisor \\
-        % Konzultant: & \consultant \\ % Optional
+        \lnprogram: & \program \\[0.7em]
+        \lnfieldofstudy: & \fieldofstudy \\[0.7em]
+        \lndepartment: & \department \\[0.7em]
+        \lnsupervisor: & \supervisor \\
+        \ifdefined\consultant
+        \\[-0.8em]\lnconsultant: & \consultant \\
+        \fi
     \end{tabular}
     
-    \vspace{10em} 
+    \vspace{3.5em} 
     \noindent
     \textbf{Bratislava \thesisyear} 
+    \vspace{3.5em}
     
     
     

@@ -1,11 +1,10 @@
 \documentclass[12pt]{article}
 
 % Essential Packages
-\usepackage[main=slovak,english]{babel}
 \usepackage{setspace}
 \usepackage{pdfpages}
 \usepackage{newtxtext} % Times New Roman
-\usepackage[a4paper, left=3.5cm, right=2cm, top=2.5cm, bottom=2.5cm]{geometry} % Margins
+\usepackage[a4paper, left=3.5cm, top=2.5cm, right=1.5cm, bottom=2.85cm, includefoot]{geometry} % Margins
 \usepackage{graphicx}
 \usepackage[table]{xcolor}
 \usepackage{tocbibind}
@@ -13,47 +12,47 @@
 \usepackage[acronym]{glossaries}
 \usepackage{url}
 \usepackage{caption}
-\usepackage{csquotes}
 \usepackage{longtable}
+
+\usepackage{enumitem} % for disabling the vertical space between list items
+\setlist{noitemsep}   % leave space around whole list
+
 
 \usepackage[T1]{fontenc} % Formatting
 \usepackage[utf8]{inputenc}
+\usepackage{csquotes}
 
 % Optional packages
 \usepackage{listings}% Code blocks with syntax highlighting:
-%\usepackage{hyperref} % PDF hyperlinks
+\usepackage{hyperref} % PDF hyperlinks
+\hypersetup{ % Set all link colours to black - clickable but inconspicuous
+    colorlinks = true,
+    citecolor = black,
+    linkcolor = black,
+    filecolor = black,
+    urlcolor = black
+}
 
-% ‼️‼️‼️‼️ Choose thesis type ‼️‼️‼️‼️
-% Uncomment only one of the following lines:
-%\def\isBachelorThesis{1} % Bachelor thesis
-\def\isMasterThesis{1} % Master thesis
 
 % Thesis metadata
+\input{metadata.tex}
+
+% Load lang mutations
+\input{lang/english}
+\input{lang/slovak}
+
+\title{\thesistitle}
+\author{\thesisauthor}
+
 % Bachelor thesis info
 \ifdefined\isBachelorThesis
-\title{Názov bakalárskej práce}
-\author{Janko Mrkvička}
-\def\thesisHeader{Bakalárska práca} 
+\def\thesisHeader{\lnbachelorthesis} 
 \fi
 
 % Master thesis info 
 \ifdefined\isMasterThesis
-\title{Názov diplomovej práce}
-\author{Bc. Janko Mrkvička}
-\def\thesisHeader{Diplomová práca}
+\def\thesisHeader{\lndiplomathesis}
 \fi
-
-\def\uid{FI-123456-12345} % Replace with your own student ID
-\def\supervisor{doc. RNDr. Severín Hrot, PhD.}
-\def\consultant{Mgr. Ignác Novák} % Optional, remove in titlepage-alt
-\def\thesisyear{2026}
-
-% University metadata
-\def\university{PANEURÓPSKA VYSOKÁ ŠKOLA}
-\def\faculty{Fakulta Informatiky}
-\def\program{Aplikovaná informatika}
-\def\fieldofstudy{Informatika}
-\def\department{Ústav aplikovanej informatiky}
 
 % Bibliography configuration for STN ISO 690
 % style = iso-authoryear, iso-numeric
@@ -70,7 +69,7 @@
 \pagestyle{fancy}
 \fancyhead{}
 \fancyfoot{}
-\fancyfoot[R]{\thepage}
+\fancyfoot{} % no numbering in the front matter
 \renewcommand{\headrulewidth}{0pt}%
 
 % Loading Acronyms
@@ -110,16 +109,19 @@
 }
 
 % Redefine listing caption name
-\renewcommand{\lstlistingname}{Výpis}
-\renewcommand{\lstlistlistingname}{Zoznam výpisov}
+\renewcommand{\lstlistingname}{\lnlistingname}
+\renewcommand{\lstlistlistingname}{\lnlistlistingname}
 
 % Document start
 \begin{document}
-\selectlanguage{slovak}
 
 % Essentials
 \include{essentials/titlepage}
 \include{essentials/titlepage-alt}
+
+% Even the title pages should be accounted for - as seen in the doc template (Contents is on p.8).
+\setcounter{page}{3}
+
 %
 % Replace file with your own:
 \includepdf{essentials/assignment.pdf}
@@ -132,19 +134,31 @@
 % Print Table of Contents, List of Figures
 \tableofcontents
 \pagebreak
+
+% set style
+\pagestyle{fancy}
+\fancyhead{}
+\fancyfoot{}
+\fancyfoot[R]{\thepage\hspace{0.4cm}} % restore numbering + ugly fix for geometry change
+
+% Increase the right margin - as seen in the doc template
+\newgeometry{left=3.5cm, top=2.5cm, right=2cm, bottom=3.85cm} 
+
 \listoffigures
 \pagebreak
 
 % Print Glossary
-\glsaddall % Optional for printing all acronyms, even if not used
-\addcontentsline{toc}{section}{Zoznam skratiek a značiek}
-\printglossary[type=\acronymtype,title={Zoznam skratiek a značiek}]
+\glsaddall % Optional for printing all acronyms, even if not used but (TODO:) adds a weird vertical space.
+\addcontentsline{toc}{section}{\lnlistabbr}
+\printglossary[type=\acronymtype,title={\lnlistabbr}]
 
 
 
 %%%%%%% DOCUMENT BODY %%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Úvod}
+\section*{\lnintro} % Introduction is unnumbered! For numbered chapters see examples.tex
+\addcontentsline{toc}{section}{\lnintro}
+
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eu lacus leo. Nulla egestas purus non dignissim tincidunt. In sit amet tellus bibendum, lobortis magna ut, sodales mi. Etiam vel eros efficitur purus ultrices vulputate et quis justo. Nunc ultrices tellus a dui mattis, eget laoreet arcu tempor. Donec vestibulum, magna ac fringilla lacinia, libero risus fringilla arcu, nec consectetur nibh justo vel sem. Quisque gravida sit amet elit ut aliquam...\par
 \vspace{1em}
 \noindent
@@ -159,7 +173,8 @@ V tretej kapitole sme sa zaoberali popisom implementácie systému...
 % Examples:
 \include{examples/examples} 
 
-\section{Záver}
+\section*{\lnconclusion} % Conclusion is unnumbered!
+\addcontentsline{toc}{section}{\lnconclusion}
 Nezabudnite na Záver a zhodnotenie.\\  
 Cieľ bakalárskej práce bol splnený.
 
@@ -168,8 +183,8 @@ Cieľ bakalárskej práce bol splnený.
 
 % Bibliography
 \newpage
-\printbibliography[title={Použitá literatúra}]
-\addcontentsline{toc}{section}{Použitá literatúra}
+\printbibliography[title={\lnbibliography}]
+\addcontentsline{toc}{section}{\lnbibliography}
 
 % Appendices
 \include{essentials/appendices}
